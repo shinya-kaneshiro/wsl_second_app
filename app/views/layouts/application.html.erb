@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -18,11 +19,5 @@
         <p>Alert: <%= flash[:alert] %></p>
     <% end %>
     <%= yield %>
-
-    <% if current_user %>
-        <li><%= link_to 'アカウント編集', edit_user_registration_path %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-    <% end %>
-
   </body>
 </html>
