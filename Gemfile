@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 gem 'devise'
+gem 'rails-i18n'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.3'
 # Use sqlite3 as the database for Active Record

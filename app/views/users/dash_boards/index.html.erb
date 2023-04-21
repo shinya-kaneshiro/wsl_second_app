@@ -1,7 +1,12 @@
-<h1>Users::DashBoards#index</h1>
-<p>Find me in app/views/users/dash_boards/index.html.erb</p>
-
-<% if current_user %>
-    <li><%= link_to 'アカウント編集', edit_user_registration_path %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-<% end %>
+<div class="container">
+  <h1 class="text-center">Dash Boards</h1>
+  <div class="text-center h4 mb-3">
+    <%= "#{@user.name}" %>
+  </div>
+  <div class="text-center">
+    <%= link_to I18n.t('.user_edit'), edit_user_registration_path, class: "btn dash-boards-button" %>
+  </div>
+  <div class="text-center">
+    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, method: :delete, class: "btn dash-boards-button second"  %>
+  </div>
+</div>
