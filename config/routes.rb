@@ -15,5 +15,16 @@ Rails.application.routes.draw do
     get 'dash_boards/index'
   end
 
+  namespace :users do
+    # resource :articles
+    get 'articles/index'
+    get 'articles/show'
+    get 'articles/new'
+    post 'articles/create'
+    get 'articles/edit'
+    patch 'articles/update'
+    delete 'articles/destroy'
+  end
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

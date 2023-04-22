@@ -1,6 +1,10 @@
 ja:
-  user_edit: アカウント編集
   sign_out: ログアウト
+  user_edit: アカウント編集
+  article_index: 記事一覧
+  article_create: 記事新規作成
+  article_edit: 記事の編集
+  article_show: 記事詳細
   activerecord:
     attributes:
       user:
@@ -29,6 +33,8 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      article:
+        image: 画像
     models:
       user: ユーザー
   devise:

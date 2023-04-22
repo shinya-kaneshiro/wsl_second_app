@@ -3,10 +3,13 @@
   <div class="text-center h4 mb-3">
     <%= "#{@user.name}" %>
   </div>
-  <div class="text-center">
+  <div class="text-center mb-3">
+    <%= link_to I18n.t('.article_index'), users_articles_index_path, class: "btn dash-boards-button" %>
+  </div>
+  <div class="text-center mb-3">
     <%= link_to I18n.t('.user_edit'), edit_user_registration_path, class: "btn dash-boards-button" %>
   </div>
-  <div class="text-center">
+  <div class="text-center mb-3">
     <%= link_to I18n.t('.sign_out'), destroy_user_session_path, method: :delete, class: "btn dash-boards-button second"  %>
   </div>
 </div>

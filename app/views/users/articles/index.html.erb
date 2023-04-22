@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="text-center"><%= I18n.t('.article_index') %></h2>
+  <div class="text-center">
+    <%= link_to I18n.t('.article_create'), users_articles_new_path, class: "btn dash-boards-button article" %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-1 vh-center" scope="col">詳細表示</th>
+        <th class="col-1 vh-center" scope="col">タイトル</th>
+        <th class="col-1 vh-center" scope="col">内容</th>
+        <th class="col-2 vh-center" scope="col">画像</th>
+        <th class="col-1 vh-center" scope="col">編集・削除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |art| %>
+        <tr>
+          <td class="vh-center"><%= link_to "詳細", users_articles_show_path(id: art.id), class: "btn btn-primary" %></td>
+          <td class="vh-center"><%= art.title %></td>
+          <td class="vh-center"><%= art.content %></td>
+          <td class="vh-center">
+            <% if art.image.present? %>
+              <%= image_tag "#{art.image.thumb.url}" %>
+            <% end %>
+          </td>
+          <td class="vh-center">
+            <%= link_to "編集", users_articles_edit_path(id: art.id), class: "btn btn-success" %>
+            <%= link_to "削除", users_articles_destroy_path(id: art.id), method: :delete, data: { confirm: "「記事ID: #{art.id}」を削除します。よろしいですか？"}, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="mt-3"><%= link_to '戻る', users_dash_boards_index_path(current_user) %></div>
+</div>

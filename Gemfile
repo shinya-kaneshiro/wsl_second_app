@@ -7,6 +7,8 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.3'
